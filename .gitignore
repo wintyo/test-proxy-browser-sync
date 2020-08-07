@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.storybook-out/
+
+# 生成ファイル
+src/css/webfont.scss
+src/css/resources/webfont-mixin.scss
+src/fonts/_dist
+
+# エラー関係
+package-lock.json
+yarn-error.log
+npm-debug.log
+
+# エディタなどで生成されるファイル
+.idea/
+.DS_Store
+.history
