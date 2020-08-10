@@ -10,7 +10,6 @@
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.26.12",
-    "proxy-middleware": "^0.15.0",
-    "url": "^0.11.0"
+    "http-proxy-middleware": "^1.0.5"
   }
 }

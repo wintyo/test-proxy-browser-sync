@@ -1,17 +1,18 @@
 const browserSync = require('browser-sync');
-const url = require('url');
-const proxyMiddleware = require('proxy-middleware');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const bs = browserSync.create();
-
-const proxyOptions = url.parse('https://qiita.com/api');
-proxyOptions.route = '/api';
-// proxyOptions.auth = 'username:password';
 
 bs.init({
   server: {
     baseDir: './src',
-    middleware: [proxyMiddleware(proxyOptions)],
+    middleware: [
+      createProxyMiddleware('/api', {
+        target: 'https://qiita.com/',
+        // auth: 'username:password',
+        changeOrigin: true,
+      }),
+    ],
   },
   watch: true,
   ghostMode: false,
